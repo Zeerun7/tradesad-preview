@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitor Scanner — TradesAd Suite™</title>
+<meta name="description" content="Compare your contractor ad against up to 5 competitors with the deterministic 36-pattern rule engine. Side-by-side scores, violation breakdowns, and top gaps to fix. Runs entirely in your browser.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="audit-hero">
+  <div class="container">
+    <h1>Competitor Scanner</h1>
+    <p>Paste your ad and up to 5 competitor ads. The rule engine scores every one with the same 36 policy patterns, then shows you side-by-side: where you win, where you lose, and the top 3 gaps to fix. Deterministic and reproducible. Nothing leaves your browser.</p>
+    <span class="version-badge" id="cmpVersionBadge">Policy Engine v—</span>
+  </div>
+</section>
+
+<main class="wrap" style="padding-top:24px;max-width:960px">
+  <!-- INPUT -->
+  <section id="cmpInputCard" class="card">
+    <h1>Scan the competition</h1>
+    <p class="lede">Paste competitor ad copy or page text you found yourself — <strong>automatic competitor discovery isn't included</strong>. Find their ads (Meta Ad Library, Google search, their site), paste them below, and the engine does the rest.</p>
+
+    <label class="field">
+      <span>Agency name for the report header <em>(optional — used for white-label printing)</em></span>
+      <input type="text" id="cmpAgency" placeholder="e.g. Vanguard Trades Media" autocomplete="off">
+    </label>
+    <label class="field">
+      <span>Your ad or landing page text <em>(required)</em></span>
+      <textarea id="cmpYour" rows="5" placeholder="Paste YOUR ad copy or page text here…"></textarea>
+    </label>
+    <label class="field">
+      <span>Competitor 1 <em>(required — at least one)</em></span>
+      <textarea id="cmp1" rows="4" placeholder="Paste competitor 1's ad copy or page text…"></textarea>
+    </label>
+    <label class="field">
+      <span>Competitor 2 <em>(optional)</em></span>
+      <textarea id="cmp2" rows="4" placeholder="Paste competitor 2's ad copy or page text…"></textarea>
+    </label>
+    <label class="field">
+      <span>Competitor 3 <em>(optional)</em></span>
+      <textarea id="cmp3" rows="4" placeholder="Paste competitor 3's ad copy or page text…"></textarea>
+    </label>
+    <label class="field">
+      <span>Competitor 4 <em>(optional)</em></span>
+      <textarea id="cmp4" rows="4" placeholder="Paste competitor 4's ad copy or page text…"></textarea>
+    </label>
+    <label class="field">
+      <span>Competitor 5 <em>(optional)</em></span>
+      <textarea id="cmp5" rows="4" placeholder="Paste competitor 5's ad copy or page text…"></textarea>
+    </label>
+
+    <div class="row">
+      <button id="cmpRunBtn" class="btn primary">Run Comparison</button>
+    </div>
+    <p id="cmpInputError" class="error" hidden>Please paste your ad copy first.</p>
+  </section>
+
+  <!-- REPORT -->
+  <section id="cmpReportCard" class="card" hidden>
+    <div class="report-head">
+      <div>
+        <div id="cmpReportAgency" style="font-size:20px;font-weight:800">TradesAd Suite™</div>
+        <div class="verdict-sub">Competitor scan · <span id="cmpCompCount">0</span> competitors · Policy Engine <strong id="cmpReportVersion">—</strong></div>
+        <div class="verdict-sub" id="cmpReportTime"></div>
+      </div>
+    </div>
+
+    <h2>Side-by-side</h2>
+    <div class="compare-wrap" id="cmpTable"></div>
+
+    <h2>You vs. the average</h2>
+    <div id="cmpSummary"></div>
+
+    <h2>Top gaps to fix</h2>
+    <div id="cmpGaps"></div>
+
+    <div class="actions">
+      <button id="cmpAgainBtn" class="btn">Scan again</button>
+      <button id="cmpPrintBtn" class="btn ghost">Print / Save PDF</button>
+    </div>
+    <p class="disclaimer">Pre-screen only — not legal advice. Scores come from the same deterministic rule engine; they measure policy-risk language, not ad quality or conversion. The ad platforms make the final call.</p>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+<!-- Engine order matters: rule engine first, then the comparison layer. -->
+<script src="assets/engine.js"></script>
+<script src="assets/compare-engine.js"></script>
+<script src="assets/compare-ui.js"></script>
+</body>
+</html>
