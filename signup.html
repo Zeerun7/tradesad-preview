@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — TradesAd Suite™</title>
+<meta name="description" content="Create your TradesAd Suite account. Start free.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="section">
+  <div class="container">
+    <div class="form-card">
+      <h1>Create your account</h1>
+      <p class="lede">Start free. Upgrade when the audits start paying for themselves.</p>
+      <div id="formNotice"></div>
+      <form id="signupForm" novalidate>
+        <div class="field">
+          <label for="su-name">Full name</label>
+          <input type="text" id="su-name" autocomplete="name" placeholder="Jane Smith">
+          <div class="ferr" id="ferr-su-name"></div>
+        </div>
+        <div class="field">
+          <label for="su-company">Company <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <input type="text" id="su-company" autocomplete="organization" placeholder="Acme Plumbing Co.">
+          <div class="ferr" id="ferr-su-company"></div>
+        </div>
+        <div class="field">
+          <label for="su-email">Email</label>
+          <input type="email" id="su-email" autocomplete="email" placeholder="you@company.com">
+          <div class="ferr" id="ferr-su-email"></div>
+        </div>
+        <div class="field">
+          <label for="su-password">Password</label>
+          <input type="password" id="su-password" autocomplete="new-password" placeholder="At least 8 characters">
+          <div class="ferr" id="ferr-su-password"></div>
+        </div>
+        <div class="field">
+          <label for="plan">Plan</label>
+          <select id="plan">
+            <option value="starter">Starter — $0 (1 audit/mo)</option>
+            <option value="pro">Pro Agency — $197/mo (50 audits/mo)</option>
+            <option value="scale">Scale — $497/mo (500 audits/mo)</option>
+          </select>
+        </div>
+        <label class="checkrow">
+          <input type="checkbox" id="su-terms">
+          <span>I agree to the Terms of Service and understand TradesAd reports are a pre-screen, not legal advice or a guarantee of ad approval.</span>
+        </label>
+        <div class="ferr" id="ferr-su-terms" style="margin:-8px 0 12px"></div>
+        <button class="btn-volt" type="submit" style="width:100%">Create account</button>
+      </form>
+      <p class="form-alt">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
