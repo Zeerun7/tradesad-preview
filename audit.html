@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Run an Audit — TradesAd Suite™</title>
+<meta name="description" content="Paste your contractor ad copy and get a deterministic, rule-based policy audit in seconds. Runs entirely in your browser.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="audit-hero">
+  <div class="container">
+    <h1>Rule-Based Ad Audit</h1>
+    <p>Paste your ad exactly as written. The engine checks it against 36 deterministic policy patterns — same ad in, same verdict out, every time. Nothing leaves your browser.</p>
+    <span class="version-badge" id="versionBadge">Policy Engine v—</span>
+  </div>
+</section>
+
+<main class="wrap" style="padding-top:24px">
+  <!-- INPUT (element IDs match the verified tool UI — do not rename) -->
+  <section id="inputCard" class="card">
+    <h1>Audit your ad copy</h1>
+    <p class="lede">The rule engine checks your ad against <strong id="patternCount">36</strong> deterministic policy patterns drawn from Google, Meta, EPA, and FTC rules.</p>
+
+    <label class="field">
+      <span>Business name <em>(optional)</em></span>
+      <input type="text" id="bizName" placeholder="e.g. Acme Plumbing Co." autocomplete="off">
+    </label>
+    <label class="field">
+      <span>Ad headline <em>(optional)</em></span>
+      <input type="text" id="headline" placeholder="e.g. $89 Summer AC Tune-Up" autocomplete="off">
+    </label>
+    <label class="field">
+      <span>Ad primary copy <em>(required)</em></span>
+      <textarea id="bodyText" rows="7" placeholder="Paste the full ad text here…"></textarea>
+    </label>
+    <label class="field">
+      <span>Call to action <em>(optional)</em></span>
+      <input type="text" id="cta" placeholder="e.g. Call now for same-day service" autocomplete="off">
+    </label>
+
+    <div class="row">
+      <button id="runBtn" class="btn primary">Run Audit</button>
+      <div class="samples">Try a sample:
+        <button class="link" data-sample="risky">risky ad</button> ·
+        <button class="link" data-sample="clean">clean ad</button> ·
+        <button class="link" data-sample="license">licensed ad</button>
+      </div>
+    </div>
+    <p id="inputError" class="error" hidden>Please paste your ad copy first.</p>
+  </section>
+
+  <!-- REPORT (element IDs match the verified tool UI — do not rename) -->
+  <section id="reportCard" class="card" hidden>
+    <div class="report-head">
+      <div class="score-wrap">
+        <svg viewBox="0 0 120 120" class="ring">
+          <circle cx="60" cy="60" r="52" class="ring-bg"/>
+          <circle cx="60" cy="60" r="52" class="ring-fg" id="ringFg"/>
+          <text x="60" y="66" text-anchor="middle" class="ring-num" id="scoreNum">–</text>
+        </svg>
+        <div>
+          <div id="verdictBadge" class="verdict">–</div>
+          <div class="verdict-sub" id="verdictSub"></div>
+        </div>
+      </div>
+      <div class="report-meta">
+        <div id="reportBiz"></div>
+        <div>Policy Engine <strong id="reportVersion">—</strong></div>
+        <div id="reportTime"></div>
+      </div>
+    </div>
+
+    <div id="licenseCard" class="license"></div>
+    <div id="grayCard" class="gray" hidden></div>
+
+    <h2>Policy findings <span id="findingCount" class="count"></span></h2>
+    <div id="findings"></div>
+
+    <h2>Strengths</h2>
+    <ul id="strengths" class="checklist"></ul>
+
+    <div class="actions">
+      <button id="againBtn" class="btn">Audit another ad</button>
+      <button id="printBtn" class="btn ghost">Print / Save PDF</button>
+    </div>
+    <p class="disclaimer">Pre-screen only — not legal advice and not a guarantee of ad approval. Meta and Google apply the final decision. When in doubt, have a human media buyer review before launching.</p>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+<!-- Engine: verbatim copy of the verified rule engine (policy v2026-09-29). Do not hand-edit — regenerate from ../dist/index.html. -->
+<script src="assets/engine.js"></script>
+<script src="assets/audit-ui.js"></script>
+</body>
+</html>
