@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Watchlist — TradesAd Suite™</title>
+<meta name="description" content="Track your clients' landing pages over time: re-audit on demand, watch scores move on a history graph, and print white-label progress reports. Deterministic, rule-based, zero AI.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="audit-hero">
+  <div class="container">
+    <h1>Client Watchlist</h1>
+    <p>Your retention loop: add each client's landing page, re-audit it any time with the same deterministic engine, and watch the score move. When issues get fixed, the changelog proves it — print the progress report with your agency's brand on it.</p>
+    <span class="version-badge" id="wlVersionBadge">Watchlist v1</span>
+  </div>
+</section>
+
+<main class="wrap" style="padding-top:24px">
+  <!-- AGENCY BRAND (white-label) -->
+  <section class="card no-print">
+    <h2 style="margin-top:0">Your brand on client reports</h2>
+    <p class="lede">This name appears on printed progress reports instead of ours.</p>
+    <label class="field">
+      <span>Agency brand</span>
+      <input type="text" id="wlBrand" placeholder="e.g. Vanguard Trades Media" autocomplete="off">
+    </label>
+  </section>
+
+  <!-- ADD SITE -->
+  <section class="card no-print">
+    <h2 style="margin-top:0">Add a client site</h2>
+    <form id="wlAddForm">
+      <div class="wl-form-row">
+        <label class="field">
+          <span>Client name</span>
+          <input type="text" id="wlName" placeholder="e.g. Acme Plumbing Co." autocomplete="off">
+        </label>
+        <label class="field">
+          <span>Landing page link</span>
+          <input type="url" id="wlUrl" placeholder="https://example.com" autocomplete="off">
+        </label>
+      </div>
+      <p class="wl-error" id="wlAddError" hidden></p>
+      <button class="btn primary" type="submit">Add to watchlist</button>
+      <p class="wl-note">Demo mode holds 10 sites and keeps history in this browser. Pro includes 10 sites, Scale 50 — see <a href="pricing.html">Pricing</a>. Re-audits always run the full fresh audit, never a cached score.</p>
+    </form>
+  </section>
+
+  <!-- EMPTY STATE -->
+  <section class="card" id="wlEmpty" hidden>
+    <h2 style="margin-top:0">No clients yet</h2>
+    <p class="lede">Add your first client above. The loop works like this:</p>
+    <ol class="wl-steps">
+      <li><strong>Baseline:</strong> run the first audit — that's the "before" score.</li>
+      <li><strong>Fix:</strong> hand the client the findings, or fix the page yourself.</li>
+      <li><strong>Re-audit:</strong> hit <em>Re-audit now</em> — sites go <strong>Re-audit due</strong> after 30 days without one.</li>
+      <li><strong>Prove it:</strong> open <em>Progress</em> for the score graph and changelog, print it with your brand.</li>
+    </ol>
+    <p class="lede">That monthly "your score went from 58 to 84" report is what keeps clients paying.</p>
+  </section>
+
+  <!-- SITE LIST -->
+  <div id="wlList"></div>
+
+  <p class="disclaimer">Pre-screen only — not legal advice. Re-audits read the live page each time; JavaScript-heavy pages may need the paste option on the <a href="landing-audit.html">Landing Page Audit</a> instead of a link re-audit.</p>
+</main>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/landing-engine.js"></script>
+<script src="assets/watchlist.js"></script>
+</body>
+</html>
