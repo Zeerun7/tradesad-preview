@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — TradesAd Suite™</title>
+<meta name="description" content="TradesAd Suite pricing: Starter $0, Pro Agency $197/mo, Scale $497/mo. Deterministic ad audits for contractors and agencies.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="section">
+  <div class="container" style="text-align:center">
+    <h1>Simple pricing that pays for itself</h1>
+    <p class="sub" style="margin-left:auto;margin-right:auto">One flagged claim caught before launch costs less than one disapproved campaign. Every plan includes all three tools — ad audits, landing-page audits, and competitor scans — against one monthly quota. Start free — upgrade when the audits start saving you real money.</p>
+    <div class="plans" style="text-align:left;margin-top:36px">
+      <div class="plan">
+        <h3>Starter</h3>
+        <div class="price">$0</div>
+        <div class="per">free forever</div>
+        <ul>
+          <li>1 audit per month</li>
+          <li>Full rule-engine report</li>
+          <li>Policy version stamp</li>
+          <li>Print / save PDF</li>
+        </ul>
+        <button class="btn-dark" data-plan="starter" type="button">Start free</button>
+      </div>
+      <div class="plan popular">
+        <span class="plan-flag">MOST POPULAR</span>
+        <h3>Pro Agency</h3>
+        <div class="price">$197<span style="font-size:16px;font-weight:600">/mo</span></div>
+        <div class="per">for agencies &amp; busy contractors</div>
+        <ul>
+          <li>50 audits per month</li>
+          <li>White-label PDF reports with your branding</li>
+          <li>Client-ready report branding</li>
+          <li>Policy version tracking per report</li>
+          <li>Fix guidance on every finding</li>
+          <li>Email support</li>
+        </ul>
+        <button class="btn-volt" data-plan="pro" type="button">Start Pro Agency</button>
+      </div>
+      <div class="plan">
+        <h3>Scale</h3>
+        <div class="price">$497<span style="font-size:16px;font-weight:600">/mo</span></div>
+        <div class="per">for high-volume teams</div>
+        <ul>
+          <li>500 audits per month</li>
+          <li>Everything in Pro Agency</li>
+          <li>API access <em style="color:var(--muted)">(coming soon)</em></li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn-dark" data-plan="scale" type="button">Start Scale</button>
+      </div>
+    </div>
+    <p class="hero-note" style="color:var(--muted);margin-top:18px;font-size:13px">Checkout is not wired up yet — plan buttons take you to signup. Payment links are configured in <code>assets/config.js</code>.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2>Compare plans</h2>
+    <div class="compare-wrap">
+    <table class="compare">
+      <tr><th>Feature</th><th>Starter</th><th>Pro Agency</th><th>Scale</th></tr>
+      <tr><td>Audits per month</td><td class="tick">1</td><td class="tick">50</td><td class="tick">500</td></tr>
+      <tr><td>36-pattern rule engine</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>Full-sentence evidence + fix guidance</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>License-credential check</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>Landing-page audits</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>Competitor scans</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>Print / save PDF</td><td class="tick">✓</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>White-label client reports</td><td></td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>Policy version tracking</td><td></td><td class="tick">✓</td><td class="tick">✓</td></tr>
+      <tr><td>API access</td><td></td><td></td><td>Coming soon</td></tr>
+      <tr><td>Support</td><td>—</td><td>Email</td><td>Priority</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Pricing FAQ</h2>
+    <div class="faq">
+      <details><summary>What counts as one audit?</summary><div class="a">One audit = one ad copy run through the rule engine, producing one report. Re-running the same ad counts again — but since the engine is deterministic, you'll get the identical report.</div></details>
+      <details><summary>Can I cancel anytime?</summary><div class="a">Yes. Monthly plans cancel in one click and stay active until the end of the billing period. (Billing is handled through Stripe once checkout is connected.)</div></details>
+      <details><summary>Do unused audits roll over?</summary><div class="a">No — audit quotas reset each month. Most agencies use far fewer than 50 once their ad templates are cleaned up, which is the point.</div></details>
+      <details><summary>Is there a free trial of Pro Agency?</summary><div class="a">The Starter plan is free forever and runs the exact same engine — it's the trial. Upgrade when you need volume or white-label client reports.</div></details>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <button class="btn-volt" data-plan="pro" type="button" style="font-size:16px;padding:14px 34px">Start with Pro Agency</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
