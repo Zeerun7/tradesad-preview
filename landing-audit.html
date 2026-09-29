@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page Audit — TradesAd Suite™</title>
+<meta name="description" content="Enter your landing page link and get a deterministic rule-based audit: phone consistency, license credentials, CTAs, trust signals. The audit runs in your browser; nothing is stored.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="audit-hero">
+  <div class="container">
+    <h1>Landing Page Audit</h1>
+    <p>Enter your landing page link and the engine checks phone consistency, license credentials, business-name match, calls to action, trust signals, and service-area signals. Deterministic: same page in, same verdict out. We open the link once to read the page; the audit itself runs in your browser and nothing is stored.</p>
+    <span class="version-badge" id="lpVersionBadge">Page Engine v—</span>
+  </div>
+</section>
+
+<main class="wrap" style="padding-top:24px">
+  <!-- INPUT -->
+  <section id="lpInputCard" class="card">
+    <h1>Audit your landing page</h1>
+    <p class="lede">Enter your page link below and hit <strong>Audit my page</strong> — we'll open the page and run every check on it.</p>
+
+    <label class="field">
+      <span>Business name <em>(optional)</em></span>
+      <input type="text" id="lpBizName" placeholder="e.g. Acme Plumbing Co." autocomplete="off">
+    </label>
+    <label class="field">
+      <span>Landing page link <em>(required)</em></span>
+      <input type="url" id="lpUrl" inputmode="url" placeholder="https://your-site.com/services" autocomplete="off" autocapitalize="off" spellcheck="false">
+    </label>
+    <p class="alt-toggle"><button class="link" id="lpPasteToggle" type="button">or paste your page content instead</button></p>
+
+    <div class="row">
+      <button id="lpFetchBtn" class="btn primary">Audit my page</button>
+    </div>
+    <p id="lpFetchStatus" class="fetch-status" hidden>Opening your page…</p>
+    <p id="lpUrlError" class="error" hidden>Please enter your page link first.</p>
+
+    <!-- Fallback: paste path (also opened by the toggle above) -->
+    <div id="lpPastePanel" hidden>
+      <div id="lpFallbackNote" class="fallback-note" hidden></div>
+      <label class="field">
+        <span>Page content <em>(required)</em></span>
+        <textarea id="lpContent" rows="8" placeholder="Paste your page content here…"></textarea>
+      </label>
+      <p class="mini-steps"><span>1. Open your page in a browser</span><span>2. Select all and copy</span><span>3. Paste it here</span></p>
+      <div class="row">
+        <button id="lpRunBtn" class="btn primary">Run Page Audit</button>
+        <div class="samples">Try a sample:
+          <button class="link" data-lpsample="risky">risky page</button> ·
+          <button class="link" data-lpsample="clean">clean page</button>
+        </div>
+      </div>
+      <p id="lpInputError" class="error" hidden>Please paste the page content first.</p>
+    </div>
+  </section>
+
+  <!-- REPORT -->
+  <section id="lpReportCard" class="card" hidden>
+    <div class="report-head">
+      <div class="score-wrap">
+        <svg viewBox="0 0 120 120" class="ring">
+          <circle cx="60" cy="60" r="52" class="ring-bg"/>
+          <circle cx="60" cy="60" r="52" class="ring-fg" id="lpRingFg"/>
+          <text x="60" y="66" text-anchor="middle" class="ring-num" id="lpScoreNum">–</text>
+        </svg>
+        <div>
+          <div id="lpVerdictBadge" class="verdict">–</div>
+          <div class="verdict-sub" id="lpVerdictSub"></div>
+        </div>
+      </div>
+      <div class="report-meta">
+        <div id="lpReportBiz"></div>
+        <div>Page Engine <strong id="lpReportVersion">—</strong></div>
+        <div id="lpReportTime"></div>
+      </div>
+    </div>
+
+    <div id="lpPhoneCard" class="license"></div>
+
+    <h2>Page findings <span id="lpFindingCount" class="count"></span></h2>
+    <div id="lpFindings"></div>
+
+    <h2>Strengths</h2>
+    <ul id="lpStrengths" class="checklist"></ul>
+
+    <div class="actions">
+      <button id="lpAgainBtn" class="btn">Audit another page</button>
+      <button id="lpPrintBtn" class="btn ghost">Print / Save PDF</button>
+    </div>
+    <p class="disclaimer">Pre-screen only — not legal advice. These checks read the page content; they can't see design, load speed, or how the page actually converts. When in doubt, have a human review before spending on traffic.</p>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/landing-engine.js"></script>
+<script src="assets/landing-ui.js"></script>
+</body>
+</html>
