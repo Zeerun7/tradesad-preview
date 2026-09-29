@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — TradesAd Suite™</title>
+<meta name="description" content="How the TradesAd rule-based engine works: 5 violation families, deterministic scoring, license checks, and white-label reports.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="hero" style="padding:48px 0">
+  <div class="container">
+    <h1>A rule book, not a black box</h1>
+    <p class="lede">Three deterministic tools, one rule book. The ad audit runs 36 versioned patterns against your copy; the landing-page audit checks the page your ad sends traffic to; the competitor scanner benchmarks you against up to 5 rivals with the same engine. Here's exactly what each one checks.</p>
+    <div class="hero-ctas"><a class="btn-volt" href="audit.html">Try it on your ad</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>The 5 violation families</h2>
+    <p class="sub">Each family maps to published ad-platform or regulator guidance. Every finding names the policy, quotes the full offending sentence, and ships with fix guidance.</p>
+
+    <div class="fam">
+      <h3>1. Unsubstantiated superlatives</h3>
+      <span class="policy-tag">Google/Meta — Misleading Claims &amp; Exaggerated Guarantees</span>
+      <p>Catches <code>best</code>, <code>#1</code>, <code>top-rated</code>, <code>finest</code>, <code>cheapest</code>, <code>lowest prices</code>, <code>nobody beats our prices</code>, <code>unbeatable</code> — with smart exclusions so "we do our best" and "best practices" don't get flagged.</p>
+    </div>
+    <div class="fam">
+      <h3>2. Absolute guarantees</h3>
+      <span class="policy-tag">Google/Meta — Misleading Claims &amp; Exaggerated Guarantees</span>
+      <p>Catches <code>money-back</code>, <code>100% guaranteed</code>, <code>iron-clad guarantee</code>, <code>that's a promise</code>, <code>on the house</code>, <code>satisfaction guaranteed</code> — promises that need visible terms or they read as exaggerated guarantees.</p>
+    </div>
+    <div class="fam">
+      <h3>3. Financial &amp; savings claims</h3>
+      <span class="policy-tag">Google/Meta — Misleading Claims &amp; Exaggerated Guarantees</span>
+      <p>Catches <code>save you up to $X</code>, <code>save $500</code>, <code>money back in your pocket</code>, <code>pays for itself</code>, <code>cut your bills by X%</code> — projected-savings claims that need a disclosed basis.</p>
+    </div>
+    <div class="fam">
+      <h3>4. Personal attributes</h3>
+      <span class="policy-tag">Meta/Facebook — Personal Attributes (Section 4.6.2)</span>
+      <p>Catches <code>are you struggling…</code>, <code>tired of YOUR old AC</code>, <code>you're overpaying</code>, <code>if you're like most homeowners</code>, <code>homeowners like you</code>, <code>your family's safety</code> — Meta bans asserting or implying the viewer's personal attributes.</p>
+    </div>
+    <div class="fam">
+      <h3>5. Safety claims</h3>
+      <span class="policy-tag">EPA, FTC Regulations &amp; Ad Networks — Safety Claims Standards</span>
+      <p>Catches <code>100% safe</code>, <code>completely safe</code>, <code>harmless to children and pets</code>, <code>chemical-free</code>, <code>all-natural</code>, <code>non-toxic</code>, <code>zero risk</code>, <code>kills … on contact</code>, <code>wipes out … on contact</code> — absolute safety/efficacy claims regulators prohibit.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2>How scoring works</h2>
+    <p class="sub">No mystery math. The score is arithmetic on the findings — and the verdict is one of three labels. The tool pre-screens; it never blesses an ad as safe to launch.</p>
+    <div class="scorebar">
+      <div class="sb-high">HIGH RISK<br><span style="font-weight:400">any HIGH finding</span></div>
+      <div class="sb-rev">NEEDS REVIEW<br><span style="font-weight:400">MEDIUM finding or gray-zone triggers</span></div>
+      <div class="sb-clear">CLEAR<br><span style="font-weight:400">no findings, no triggers</span></div>
+    </div>
+    <div class="faq" style="margin-top:18px">
+      <details><summary>Exactly how is the score computed?</summary><div class="a">Start at 100. Subtract 20 per HIGH finding, 8 per MEDIUM finding. Two or more HIGH findings caps the score at 60. Floor is 40. Verdict: any HIGH → HIGH RISK; otherwise any MEDIUM or gray-zone trigger → NEEDS REVIEW; otherwise CLEAR.</div></details>
+      <details><summary>What is the gray zone?</summary><div class="a">Promotional triggers like "free", "guarantee", "limited time", or a bare percentage that don't match a hard violation pattern. They land in a "needs human review" bucket with the triggers listed — a person decides, not the engine.</div></details>
+      <details><summary>How does the license check work?</summary><div class="a">A case-sensitive regex looks for formatted credentials — letters, #, digits — like ROC #276078 or TECL #19787. Plain numbers ("10 years in business") never match. If nothing matches, the report says so plainly instead of inventing a license.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Landing Page Audit</h2>
+    <p class="sub">Paste the page's visible text — or the raw HTML, which is stripped automatically (<code>&lt;title&gt;</code>, headlines, and <code>tel:</code> links are read directly). Six deterministic check groups, same HIGH RISK / NEEDS REVIEW / CLEAR verdicts, same full-sentence evidence. <a href="landing-audit.html">Run a page audit &rarr;</a></p>
+    <div class="grid3">
+      <div class="feat"><div class="icon">📞</div><h3>Phone extraction &amp; consistency</h3><p>Finds every US-format number plus all <code>tel:</code> links. The link wins on conflict — a stale visible number next to a current tap-to-call link gets flagged HIGH.</p></div>
+      <div class="feat"><div class="icon">🪪</div><h3>License credential detection</h3><p>State patterns (OR CCB, CA CSLB, AZ ROC, WA, TX, FL…) plus generic numbered-license formats. A bare "licensed" with no credential is never quoted as proof — the report says "couldn't confirm — verify manually."</p></div>
+      <div class="feat"><div class="icon">🏷️</div><h3>Business name consistency</h3><p>Compares the page title/headline name against body mentions (case- and punctuation-insensitive). Mismatches confuse visitors and hurt local search.</p></div>
+      <div class="feat"><div class="icon">👆</div><h3>Call-to-action inventory</h3><p>Counts call, quote, booking, contact, and form CTAs. Zero CTAs is a HIGH finding — visitors are never told what to do next.</p></div>
+      <div class="feat"><div class="icon">⭐</div><h3>Trust signals</h3><p>Years in business, reviews and ratings, guarantees and warranties, insured/bonded wording — recorded as strengths when found, never invented.</p></div>
+      <div class="feat"><div class="icon">📍</div><h3>Service area signal</h3><p>Looks for "serving" areas, street addresses, and ZIP codes. A page that never says where it works gets flagged.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2>Competitor Scanner</h2>
+    <p class="sub">Paste your ad and up to 5 competitor ads or page texts you found yourself — <strong>automatic competitor discovery isn't included</strong>, and the page says so honestly. The same 36-pattern engine scores every entry, then derives the comparison. <a href="competitor-scan.html">Run a scan &rarr;</a></p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Side-by-side table</h3><p>Score, verdict, per-family violation counts, license presence, and trust-signal counts for you and each competitor — plus the competitor average row.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>You vs. the average</h3><p>Your score against the competitor mean, and per-family wins and losses derived from the violation counts. Fewer violations than average is a win.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Top 3 gaps to fix</h3><p>Your own findings grouped by violation family, HIGH first — with the same fix guidance as the ad audit. Derived from your copy only; nothing is invented about competitors.</p></div>
+    </div>
+    <p class="sub" style="margin-top:16px">Agency name field stamps the printed header for white-label client reports.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Deterministic, not AI</h2>
+    <p class="sub">An AI audit can say something different every run and hallucinate evidence. A rule engine can't. Same ad in, same verdict out — and when it misses, the fix is legible: add a pattern, add a regression test, bump the version. Every report is stamped with the policy version it was judged against (currently v2026-09-29).</p>
+    <h2 style="margin-top:40px">What a report looks like</h2>
+    <p class="sub"><span class="placeholder-tag">MOCK PREVIEW</span> — styled mock of a report layout, not a real audit.</p>
+    <div class="mock-shot">
+      <div class="mock-bar"><span>TradesAd Suite™ — Ad Audit Report</span><span>Policy Engine v2026-09-29</span></div>
+      <div class="mock-body">
+        <div class="mock-finding">
+          <span class="sev">HIGH</span><span class="policy">Google/Meta — Misleading Claims &amp; Exaggerated Guarantees</span>
+          <p class="quote">"Nobody beats our prices — that's a promise."</p>
+          <p style="font-size:13px;color:#475569;margin:0"><strong>How to fix:</strong> State the actual terms instead of absolute language: timeframe, conditions, and how the customer claims it.</p>
+        </div>
+        <div class="mock-finding" style="border-left-color:#b45309">
+          <span class="sev" style="background:#fef3c7;color:#b45309">MEDIUM</span><span class="policy">Meta/Facebook — Personal Attributes (4.6.2)</span>
+          <p class="quote">"If you're like most homeowners, you're overpaying for energy."</p>
+          <p style="font-size:13px;color:#475569;margin:0"><strong>How to fix:</strong> Describe the problem in general terms instead of the reader.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2>White-label reports for agencies</h2>
+    <p class="sub">Pro Agency reports print clean — no tool chrome, just the verdict, the evidence, and the fixes — ready to hand to a client with your branding. Every report carries the policy version stamp, so a client can see exactly which rule book their ad was judged against.</p>
+    <a class="btn-volt" href="pricing.html">See agency pricing</a>
+  </div>
+</section>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
