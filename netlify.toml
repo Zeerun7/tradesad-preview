@@ -1,0 +1,6 @@
+# Netlify settings for the TradesAd rule-based static site.
+# The fetch-page serverless function powers "paste a link" mode on the
+# Landing Page Audit (browsers can't fetch arbitrary URLs due to CORS).
+
+[functions]
+directory = "netlify/functions"
