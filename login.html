@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — TradesAd Suite™</title>
+<meta name="description" content="Log in to your TradesAd Suite account.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+<header class="site-header" id="siteNav"></header>
+
+<section class="section">
+  <div class="container">
+    <div class="form-card">
+      <h1>Welcome back</h1>
+      <p class="lede">Log in to run audits against your plan quota.</p>
+      <div id="formNotice"></div>
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="li-email">Email</label>
+          <input type="email" id="li-email" autocomplete="email" placeholder="you@company.com">
+          <div class="ferr" id="ferr-li-email"></div>
+        </div>
+        <div class="field">
+          <label for="li-password">Password</label>
+          <input type="password" id="li-password" autocomplete="current-password" placeholder="Your password">
+          <div class="ferr" id="ferr-li-password"></div>
+        </div>
+        <button class="btn-volt" type="submit" style="width:100%">Log in</button>
+      </form>
+      <p class="form-alt"><a href="#" id="forgotLink">Forgot password?</a> &nbsp;·&nbsp; New here? <a href="signup.html">Create an account</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="siteFoot"></footer>
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
